@@ -11,19 +11,12 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v4
+      - uses: actions/setup-dotnet@v4
         with:
           dotnet-version: 8.0.x
 
-      - name: Restore
-        run: dotnet restore CafePoly_Asm/CafePoly_Asm.sln
-
-      - name: Build
-        run: dotnet build CafePoly_Asm/CafePoly_Asm.sln --configuration Release --no-restore
-
-      - name: Test
-        run: dotnet test CafePoly_Asm/CafePoly_Asm.sln --no-build --verbosity normal
+      - run: dotnet restore CafePoly_Asm/CafePoly_Asm.sln
+      - run: dotnet build CafePoly_Asm/CafePoly_Asm.sln --configuration Release --no-restore
+      - run: dotnet test CafePoly_Asm/CafePoly_Asm.sln --verbosity normal
