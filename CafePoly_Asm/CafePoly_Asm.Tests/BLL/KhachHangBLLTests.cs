@@ -45,6 +45,7 @@ namespace CafePoly_Asm.Tests.BLL
         {
             _kh.MaKH = 1;
             _kh.TenKh = "Khách Trùng";
+            _kh.SDT = "0901234567"; // ⭐ THÊM DÒNG NÀY
 
             string result = KhachHangBLL.ThemKhachHang(_kh);
 
